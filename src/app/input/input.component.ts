@@ -10,4 +10,6 @@ export class InputComponent {
   @Input() placeholder = ''
   @Input() helperText = ''
   @Input() leftElement = ''
+  @Input() type = 'text'
+  @Input() name = ''
 }
