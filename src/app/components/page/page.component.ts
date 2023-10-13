@@ -6,5 +6,5 @@ import {Component, Input} from '@angular/core'
   styleUrls: ['./page.component.css'],
 })
 export class PageComponent {
-  @Input('page title') title = ''
+  @Input() title = ''
 }

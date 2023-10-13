@@ -3,10 +3,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@import 'primeng/resources/themes/lara-light-blue/theme.css';
+@import 'primeng/resources/primeng.css';
+
 .stack {
   @apply flex flex-col;
 }
 
 .center {
   @apply flex justify-center items-center;
+}
+
+.input {
+  @apply block rounded-md border-0 py-1.5 px-3 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 w-full;
 }

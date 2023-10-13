@@ -1,4 +1,4 @@
-<div class="h-full w-full absolute">
+<div class="h-full w-full absolute bg-neutral-50">
   <nav class="w-full mx-auto bg-white shadow">
     <div
       class="container px-6 justify-between h-16 flex items-center lg:items-stretch mx-auto"
@@ -36,10 +36,14 @@
           </li>
         </ul>
       </div>
-      <div class="h-full flex items-center justify-end">xd</div>
+      <div *ngIf="user" class="h-full flex items-center justify-end">
+        <div class="flex gap-2 items-center">
+          <p-avatar [label]="getUserInitials()" styleClass="text-sm" />
+          {{ user.name }}
+        </div>
+      </div>
     </div>
   </nav>
-  <!-- Navigation ends -->
-  <!-- Page title starts -->
+
   <router-outlet></router-outlet>
 </div>

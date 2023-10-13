@@ -36,14 +36,34 @@
 
       <div class="stack gap-8 w-full items-stretch">
         <form class="stack gap-4 items-stretch w-full">
-          <input
-            pInputText
-            placeholder="@example.com"
-            name="'email'"
-            [(ngModel)]="email"
-          />
+          <div class="stack gap-2">
+            <label for="password" class="text-sm text-gray-600 font-medium">
+              Email</label
+            >
+            <input
+              id="email"
+              pInputText
+              placeholder="@example.com"
+              name="'email'"
+              [(ngModel)]="email"
+              class="input"
+            />
+          </div>
 
-          <p-password name="'password'" [(ngModel)]="password"></p-password>
+          <div class="stack gap-2">
+            <label for="password" class="text-sm text-gray-600 font-medium">
+              Password</label
+            >
+            <input
+              id="password"
+              pInputText
+              placeholder="password"
+              name="'email'"
+              type="password"
+              [(ngModel)]="password"
+              class="input"
+            />
+          </div>
 
           <app-button
             label="Login"

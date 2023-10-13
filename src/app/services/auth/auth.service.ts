@@ -11,6 +11,14 @@ export class AuthService {
   login(data: LoginFormData) {
     return this.http.post<LoginResponse>(`${environment.apiUrl}/sign-in`, data)
   }
+
+  getViewer() {
+    return this.http.get<User>(`${environment.apiUrl}/viewer`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('access_token')}`,
+      },
+    })
+  }
 }
 
 type LoginFormData = {

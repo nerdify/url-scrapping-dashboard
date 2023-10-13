@@ -6,4 +6,5 @@
 >
   <ng-content select="[leftIcon]"></ng-content>
   {{ label }}
+  <ng-content *ngIf="!label"></ng-content>
 </button>
