@@ -1,0 +1,29 @@
+<app-page title="Sites" (onCreate)="openCreateModal()">
+  <div toolbar>
+    <app-button (click)="openCreateModal()">Create Site</app-button>
+  </div>
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 container mx-auto px-6"
+  >
+    <div
+      class="bg-white shadow rounded-lg p-6 flex flex-col justify-between"
+      *ngFor="let item of sites"
+    >
+      <div class="stack">
+        <h4 class="text-xl font-bold text-gray-800">{{ item.name }}</h4>
+        <p class="text-sm text-gray-500">{{ item.url }}</p>
+        <span class="text-sm text-gray-500">{{ item.last_scanned_at }}</span>
+      </div>
+    </div>
+  </div>
+
+  <p-dialog
+    header="Create Site"
+    [(visible)]="isCreateModalOpen"
+    [modal]="true"
+    [style]="{width: '50vw'}"
+    [draggable]="false"
+    [resizable]="false"
+    >xd
+  </p-dialog>
+</app-page>
