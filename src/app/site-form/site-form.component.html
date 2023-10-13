@@ -1,0 +1,59 @@
+<form class="stack gap-4 items-stretch w-full">
+  <div class="stack gap-2">
+    <label for="name" class="text-sm text-gray-600 font-medium"> Email</label>
+    <input
+      id="name"
+      pInputText
+      placeholder="@example.com"
+      name="'name'"
+      [(ngModel)]="name"
+      class="input"
+    />
+  </div>
+
+  <div class="stack gap-2">
+    <label for="url" class="text-sm text-gray-600 font-medium"> URL</label>
+    <input
+      id="url"
+      pInputText
+      placeholder="@example.com"
+      name="'url'"
+      [(ngModel)]="url"
+      class="input"
+    />
+  </div>
+
+  <div class="stack gap-2">
+    <label for="url" class="text-sm text-gray-600 font-medium">
+      Scan Interval</label
+    >
+
+    <div class="flex">
+      <p-selectButton
+        name="scanInterval"
+        [options]="scanIntervalOptions"
+        [(ngModel)]="scanInterval"
+        optionLabel="label"
+        optionValue="value"
+        class="border border-gray-300 w-max rounded-md"
+      ></p-selectButton>
+
+      <div class="relative">
+        <input
+          id="url"
+          pInputText
+          placeholder="@example.com"
+          name="'url'"
+          [(ngModel)]="url"
+          class="input"
+        />
+
+        <p-dropdown
+          [options]="scanIntervalUnitOptions"
+          [(ngModel)]="scanIntervalUnit"
+          optionLabel="label"
+        ></p-dropdown>
+      </div>
+    </div>
+  </div>
+</form>

@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core'
+import {Component, EventEmitter, Input, Output} from '@angular/core'
 
 @Component({
   selector: 'app-button',
@@ -10,9 +10,13 @@ export class ButtonComponent {
   @Input() fullWidth = false
   @Input() className = ''
   @Input() variant: ButtonVariant = 'solid'
+  @Input() type = 'button'
+  @Input() disabled = false
+
+  @Output() btnClick = new EventEmitter()
 
   onClick() {
-    alert('Button clicked')
+    this.btnClick.emit()
   }
 
   variantClassName() {

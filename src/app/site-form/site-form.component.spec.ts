@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InputComponent } from './input.component';
+import { SiteFormComponent } from './site-form.component';
 
-describe('InputComponent', () => {
-  let component: InputComponent;
-  let fixture: ComponentFixture<InputComponent>;
+describe('SiteFormComponent', () => {
+  let component: SiteFormComponent;
+  let fixture: ComponentFixture<SiteFormComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [InputComponent]
+      declarations: [SiteFormComponent]
     });
-    fixture = TestBed.createComponent(InputComponent);
+    fixture = TestBed.createComponent(SiteFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
