@@ -20,6 +20,11 @@ import {SiteListComponent} from './site-list/site-list.component'
 import {DialogModule} from 'primeng/dialog'
 import {ButtonModule} from 'primeng/button'
 
+import {SelectButtonModule} from 'primeng/selectbutton'
+import {SiteFormComponent} from './site-form/site-form.component'
+import {DropdownModule} from 'primeng/dropdown';
+import { SiteCreateComponent } from './site-create/site-create.component'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +33,8 @@ import {ButtonModule} from 'primeng/button'
     LoginComponent,
     ButtonComponent,
     SiteListComponent,
+    SiteFormComponent,
+    SiteCreateComponent,
   ],
   imports: [
     AvatarModule,
@@ -36,10 +43,12 @@ import {ButtonModule} from 'primeng/button'
     ButtonModule,
     AppRoutingModule,
     DialogModule,
+    DropdownModule,
     FormsModule,
     PasswordModule,
     InputTextModule,
     HttpClientModule,
+    SelectButtonModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],

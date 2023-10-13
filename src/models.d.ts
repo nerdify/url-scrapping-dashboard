@@ -16,3 +16,5 @@ interface Site {
   created_at: string
   updated_at: string
 }
+
+type ScanIntervalUnit = 'min' | 'hour' | 'day' | 'week' | 'month' | 'year'

@@ -1,6 +1,6 @@
-<app-page title="Sites" (onCreate)="openCreateModal()">
+<app-page title="Sites">
   <div toolbar>
-    <app-button (click)="openCreateModal()">Create Site</app-button>
+    <app-button (click)="redirectToCreatePage()">Create Site</app-button>
   </div>
   <div
     class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 container mx-auto px-6"
@@ -16,14 +16,4 @@
       </div>
     </div>
   </div>
-
-  <p-dialog
-    header="Create Site"
-    [(visible)]="isCreateModalOpen"
-    [modal]="true"
-    [style]="{width: '50vw'}"
-    [draggable]="false"
-    [resizable]="false"
-    >xd
-  </p-dialog>
 </app-page>

@@ -1,5 +1,6 @@
 import {HttpClient} from '@angular/common/http'
 import {Component, OnInit} from '@angular/core'
+import {Router} from '@angular/router'
 import {environment} from 'src/environments/environment'
 
 @Component({
@@ -10,9 +11,10 @@ import {environment} from 'src/environments/environment'
 export class SiteListComponent implements OnInit {
   sites?: Site[]
 
-  isCreateModalOpen = false
-
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+  ) {}
 
   ngOnInit() {
     this.http
@@ -26,7 +28,9 @@ export class SiteListComponent implements OnInit {
       })
   }
 
-  openCreateModal() {
-    this.isCreateModalOpen = true
+  redirectToCreatePage() {
+    console.log('redirecting to create page')
+
+    this.router.navigate(['/dashboard/sites/create'])
   }
 }

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core'
 import {AuthService} from '../../services/auth/auth.service'
+import {Router} from '@angular/router'
 
 @Component({
   selector: 'app-dashboard-layout',
@@ -9,12 +10,19 @@ import {AuthService} from '../../services/auth/auth.service'
 export class DashboardLayoutComponent implements OnInit {
   user?: User
 
-  constructor(private authService: AuthService) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+  ) {}
 
   ngOnInit(): void {
-    this.authService.getViewer().subscribe((response) => {
-      this.user = response
-    })
+    if (localStorage.getItem('access_token')) {
+      this.authService.getViewer().subscribe((response) => {
+        this.user = response
+      })
+    } else {
+      this.router.navigate(['/login'])
+    }
   }
 
   getUserInitials() {
