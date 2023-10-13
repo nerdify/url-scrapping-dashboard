@@ -13,6 +13,8 @@ export class SiteCreateComponent {
   url = ''
   scanInterval = 5
   customScanInterval = null
+  dispatchNow = true
+
   scanIntervalUnit:
     | ScanIntervalUnit
     | {
@@ -72,13 +74,6 @@ export class SiteCreateComponent {
   ) {}
 
   handleFormSubmit() {
-    console.log({
-      name: this.name,
-      url: this.url,
-      scan_interval: this.scanInterval ?? this.customScanInterval,
-      scan_interval_unit: this.scanIntervalUnit,
-    })
-
     this.http
       .post(
         `${environment.apiUrl}/sites`,
@@ -90,7 +85,7 @@ export class SiteCreateComponent {
             typeof this.scanIntervalUnit === 'object'
               ? this.scanIntervalUnit?.value
               : this.scanIntervalUnit,
-          dispatch_now: true,
+          dispatch_now: this.dispatchNow,
         },
         {
           headers: {

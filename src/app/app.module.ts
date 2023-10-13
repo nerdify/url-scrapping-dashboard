@@ -22,8 +22,10 @@ import {ButtonModule} from 'primeng/button'
 
 import {SelectButtonModule} from 'primeng/selectbutton'
 import {SiteFormComponent} from './site-form/site-form.component'
-import {DropdownModule} from 'primeng/dropdown';
-import { SiteCreateComponent } from './site-create/site-create.component'
+import {DropdownModule} from 'primeng/dropdown'
+import {SiteCreateComponent} from './site-create/site-create.component'
+import {InputSwitchModule} from 'primeng/inputswitch';
+import { SiteDetailsComponent } from './site-details/site-details.component'
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import { SiteCreateComponent } from './site-create/site-create.component'
     SiteListComponent,
     SiteFormComponent,
     SiteCreateComponent,
+    SiteDetailsComponent,
   ],
   imports: [
     AvatarModule,
@@ -49,6 +52,7 @@ import { SiteCreateComponent } from './site-create/site-create.component'
     InputTextModule,
     HttpClientModule,
     SelectButtonModule,
+    InputSwitchModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],

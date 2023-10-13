@@ -68,6 +68,16 @@
           ></p-dropdown>
         </div>
       </div>
+
+      <label for="dispatchNowSwitch" class="flex items-center gap-4 mt-2">
+        Dispatch Now
+
+        <p-inputSwitch
+          id="dispatchNowSwitch"
+          name="dispatchNow"
+          [(ngModel)]="dispatchNow"
+        ></p-inputSwitch>
+      </label>
     </div>
 
     <app-button

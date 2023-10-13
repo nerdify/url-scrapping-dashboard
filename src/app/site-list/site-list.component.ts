@@ -33,4 +33,8 @@ export class SiteListComponent implements OnInit {
 
     this.router.navigate(['/dashboard/sites/create'])
   }
+
+  redirectToDetailsPage(siteId: number) {
+    this.router.navigate([`/dashboard/sites/${siteId}`])
+  }
 }

@@ -8,6 +8,8 @@
     <div
       class="bg-white shadow rounded-lg p-6 flex flex-col justify-between"
       *ngFor="let item of sites"
+      clickable
+      (click)="redirectToDetailsPage(item.id)"
     >
       <div class="stack">
         <h4 class="text-xl font-bold text-gray-800">{{ item.name }}</h4>

@@ -1,0 +1,36 @@
+<app-page title="Site Details">
+  <div class="stack gap-4">
+    <div
+      *ngIf="site"
+      class="bg-white shadow rounded-lg p-6 flex flex-col justify-between stack gap-4"
+    >
+      <div>
+        <h1 class="text-2xl font-bold text-gray-800">{{ site?.name }}</h1>
+        <p class="text-sm text-gray-500">{{ site?.url }}</p>
+      </div>
+
+      <div class="stack">
+        <h2 class="text-md font-bold text-gray-800">Scan Interval</h2>
+        <p class="text-sm text-gray-500">
+          Every {{ site?.scan_interval }} minutes.
+        </p>
+
+        <p class="text-sm text-gray-500">
+          last scanned at: {{ site?.last_scanned_at ?? 'No Scanned yet' }}
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 container mx-auto px-6"
+      *ngIf="site && site?.snapshots"
+    ></div>
+
+    <div
+      class="bg-white shadow rounded-lg p-6 flex flex-col justify-between stack gap-4"
+      *ngIf="site && site?.snapshots?.length === 0"
+    >
+      No snapshots yet.
+    </div>
+  </div>
+</app-page>

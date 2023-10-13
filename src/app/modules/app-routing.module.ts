@@ -4,6 +4,7 @@ import {DashboardLayoutComponent} from '../components/dashboard-layout/dashboard
 import {LoginComponent} from '../login/login.component'
 import {SiteListComponent} from '../site-list/site-list.component'
 import {SiteCreateComponent} from '../site-create/site-create.component'
+import {SiteDetailsComponent} from '../site-details/site-details.component'
 
 const routes: Routes = [
   {
@@ -29,6 +30,11 @@ const routes: Routes = [
         path: 'sites/create',
         component: SiteCreateComponent,
         title: 'Create Site',
+      },
+      {
+        path: 'sites/:siteId',
+        component: SiteDetailsComponent,
+        title: 'Site Details',
       },
     ],
   },

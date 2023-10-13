@@ -15,6 +15,7 @@ interface Site {
   last_scanned_at: string
   created_at: string
   updated_at: string
+  snapshots: any[]
 }
 
 type ScanIntervalUnit = 'min' | 'hour' | 'day' | 'week' | 'month' | 'year'
