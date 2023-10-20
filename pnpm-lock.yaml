@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@abacritt/angularx-social-login':
+    specifier: ^2.1.0
+    version: 2.1.0(@angular/common@16.2.7)(@angular/core@16.2.7)
   '@angular/animations':
     specifier: ^16.2.0
     version: 16.2.7(@angular/core@16.2.7)
@@ -128,6 +131,17 @@ packages:
     resolution: {integrity: sha512-1Yjs2SvM8TflER/OD3cOjhWWOZb58A2t7wpE2S9XfBYTiIl+XFhQG2bjy4Pu1I+EAlCNUzRDYDdFwFYUKvXcIA==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /@abacritt/angularx-social-login@2.1.0(@angular/common@16.2.7)(@angular/core@16.2.7):
+    resolution: {integrity: sha512-wjKiwLhA0j/exrb17unRveAkjxYTf1qRYKXZqJfD4jSzHkODKjVpOVDmt7Q+T2m8fLJBGc304hRBuUVVEtl8xg==}
+    peerDependencies:
+      '@angular/common': '>=16.0.0'
+      '@angular/core': '>=16.0.0'
+    dependencies:
+      '@angular/common': 16.2.7(@angular/core@16.2.7)(rxjs@7.8.1)
+      '@angular/core': 16.2.7(rxjs@7.8.1)(zone.js@0.13.3)
+      tslib: 2.6.2
+    dev: false
 
   /@alloc/quick-lru@5.2.0:
     resolution: {integrity: sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==}
