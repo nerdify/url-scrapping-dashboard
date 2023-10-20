@@ -1,6 +1,8 @@
 <div class="bg-indigo-600 h-screen w-screen flex center">
-  <div class="bg-white rounded-2xl py-14 px-12 stack gap-10 max-w-[460px]">
-    <div class="flex items-center">
+  <div
+    class="bg-white rounded-2xl py-14 px-12 stack items-center gap-4 max-w-[360px]"
+  >
+    <div class="stack items-center justify-center">
       <svg
         aria-label="Home"
         id="logo"
@@ -25,17 +27,21 @@
       </h3>
     </div>
 
-    <div class="stack gap-6 w-full">
-      <div class="stack gap-2">
+    <div class="stack gap-6 w-full items-center">
+      <div class="stack gap-2 items-center">
         <h1 class="text-2xl font-bold text-gray-800">Login</h1>
         <p class="text-xs text-gray-500 font-medium">
           Sign up with your google account or enter your details to continue
           using Scrappy.
         </p>
       </div>
-
-      <div class="stack gap-8 w-full items-stretch">
-        <form class="stack gap-4 items-stretch w-full">
+      <asl-google-signin-button
+        type="standard"
+        size="large"
+        class="self-center"
+      ></asl-google-signin-button>
+      <!-- <div class="stack gap-8 w-full items-center"> -->
+      <!-- <form class="stack gap-4 items-stretch w-full">
           <div class="stack gap-2">
             <label for="email" class="text-sm text-gray-600 font-medium">
               Email</label
@@ -71,22 +77,16 @@
             className="mt-6"
             (btnClick)="login()"
           />
-        </form>
+        </form> -->
 
-        <div class="flex items-center gap-2 w-full">
+      <!-- <div class="flex items-center gap-2 w-full">
           <hr class="w-full border-gray-300 h-1" />
           <p class="text-xs min-w-max flex-1 text-gray-700 font-medium">
             Or continue with
           </p>
           <hr class="w-full border-gray-300 h-1" />
-        </div>
-
-        <asl-google-signin-button
-          type="standard"
-          size="large"
-          class="self-stretch"
-        ></asl-google-signin-button>
-      </div>
+        </div> -->
+      <!-- </div> -->
     </div>
   </div>
 </div>
