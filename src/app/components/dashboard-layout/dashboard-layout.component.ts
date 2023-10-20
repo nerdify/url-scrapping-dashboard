@@ -35,4 +35,9 @@ export class DashboardLayoutComponent implements OnInit {
 
     return ''
   }
+
+  logout() {
+    this.authService.logout()
+    this.router.navigate(['/login'])
+  }
 }
