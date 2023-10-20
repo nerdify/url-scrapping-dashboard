@@ -6,10 +6,12 @@
     class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 container mx-auto px-6"
   >
     <div
-      class="bg-white shadow rounded-lg p-6 flex flex-col justify-between"
+      tabindex="0"
+      class="bg-white shadow rounded-lg p-6 flex flex-col justify-between hover:shadow-lg transition-shadow duration-300 ease-in-out cursor-pointer"
       *ngFor="let item of sites"
       clickable
       (click)="redirectToDetailsPage(item.id)"
+      (keyup.enter)="redirectToDetailsPage(item.id)"
     >
       <div class="stack">
         <h4 class="text-xl font-bold text-gray-800">{{ item.name }}</h4>

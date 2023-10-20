@@ -24,8 +24,15 @@ import {SelectButtonModule} from 'primeng/selectbutton'
 import {SiteFormComponent} from './site-form/site-form.component'
 import {DropdownModule} from 'primeng/dropdown'
 import {SiteCreateComponent} from './site-create/site-create.component'
-import {InputSwitchModule} from 'primeng/inputswitch';
-import { SiteDetailsComponent } from './site-details/site-details.component'
+import {InputSwitchModule} from 'primeng/inputswitch'
+import {SiteDetailsComponent} from './site-details/site-details.component'
+
+import {
+  GoogleLoginProvider,
+  GoogleSigninButtonModule,
+  SocialAuthServiceConfig,
+} from '@abacritt/angularx-social-login'
+import {environment} from 'src/environments/environment'
 
 @NgModule({
   declarations: [
@@ -53,8 +60,28 @@ import { SiteDetailsComponent } from './site-details/site-details.component'
     HttpClientModule,
     SelectButtonModule,
     InputSwitchModule,
+    GoogleSigninButtonModule,
   ],
-  providers: [AuthService],
+  providers: [
+    AuthService,
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(environment.googleAPIClientID),
+          },
+        ],
+
+        onError: (err) => {
+          console.error(err)
+        },
+      } as SocialAuthServiceConfig,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
